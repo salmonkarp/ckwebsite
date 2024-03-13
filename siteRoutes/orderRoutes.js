@@ -1,10 +1,13 @@
+require("dotenv").config();
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
+const api_key = process.env.API_KEY;
+
 router.get("/", (req, res) => {
   const headers = {
-    "x-api-key": "ckapi1610",
+    "x-api-key": api_key,
   };
   let orderArray = [];
   axios
